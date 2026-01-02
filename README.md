@@ -169,7 +169,7 @@ You can find more at the [RazorLight.Samples](samples/RazorLight.Samples).
 
 Include feature is useful when you have reusable parts of your templates you want to share between different views. Includes are an effective way of breaking up large templates into smaller components. They can reduce duplication of template content and allow elements to be reused. _This feature requires you to use the RazorLight Project system, otherwise there is no way to locate the partial._
 
-```CSharp
+```cshtml
 @model MyProject.TestViewModel
 <div>
     Hello @Model.Title
@@ -202,7 +202,7 @@ Console.WriteLine(result); // Output: <html>&
 
 In order to disable encoding for the entire document - just set `"DisableEncoding"` variable to true
 
-```html
+```cshtml
 @model TestViewModel @{ DisableEncoding = true; }
 
 <html>
@@ -214,7 +214,7 @@ In order to disable encoding for the entire document - just set `"DisableEncodin
 
 Visual Studio tooling knows nothing about RazorLight and assumes, that the view you are using - is a typical ASP.NET MVC template. In order to enable Intellisense for RazorLight templates, you should give Visual Studio a little hint about the base template class, that all your templates inherit implicitly
 
-```CSharp
+```cshtml
 @using RazorLight
 @inherits TemplatePage<MyModel>
 
@@ -276,12 +276,12 @@ Most problems with RazorLight deal with deploying it on a new machine, in a dock
 When RazorLight compiles your template - it loads all the assemblies from your entry assembly and creates MetadataReference from it. This is a default strategy and it works in 99% of the time. But sometimes compilation crashes with an exception message like "Can not find assembly My.Super.Assembly2000". In order to solve this problem you can pass additional metadata references to RazorLight.
 
 ```CSharp
-var metadataReference = MetadataReference.CreateFromFile("path-to-your-assembly")
+var metadataReference = MetadataReference.CreateFromFile("path-to-your-assembly");
 
- var engine = new RazorLightEngineBuilder()
-                .UseMemoryCachingProvider()
-                .AddMetadataReferences(metadataReference)
-                .Build();
+var engine = new RazorLightEngineBuilder()
+              .UseMemoryCachingProvider()
+              .AddMetadataReferences(metadataReference)
+              .Build();
 ```
 
 ### I'm getting errors after upgrading to ASP.NET Core 3.0 when using runtime compilation
