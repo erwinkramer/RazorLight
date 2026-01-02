@@ -35,7 +35,7 @@ namespace RazorLight.Tests.Razor
 
 			var project = new FileSystemRazorProject(root);
 
-			Assert.Equal(project.Extension, FileSystemRazorProject.DefaultExtension);
+			Assert.Equal(FileSystemRazorProject.DefaultExtension, project.Extension);
 		}
 
 		[Fact]

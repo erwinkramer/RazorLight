@@ -254,7 +254,7 @@ namespace RazorLight.Tests.Extensions
 		}
 
 		[Fact]
-		public void Ensure_DI_Extension_Can_Inject()
+		public async Task Ensure_DI_Extension_Can_Inject()
 		{
 			var services = GetServices();
 			bool newRazorLightEngineCalled = false;
@@ -287,7 +287,7 @@ namespace RazorLight.Tests.Extensions
 			var engine = provider.GetService<IRazorLightEngine>();
 			Assert.NotNull(engine);
 			Assert.IsType<TestRazorLightEngine>(engine);
-			engine.CompileRenderStringAsync("","","").GetAwaiter().GetResult();
+			await engine.CompileRenderStringAsync("","","");
 			Assert.True(newRazorLightEngineCalled);
 
 			Assert.IsType<TestMetadataReferenceManager>(provider.GetService<IMetadataReferenceManager>());

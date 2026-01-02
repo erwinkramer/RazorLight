@@ -19,8 +19,8 @@ namespace RazorLight.Tests.Compilation
 			Assert.NotEmpty(exception.CompilationDiagnostics);
 			Assert.NotEmpty(exception.CompilationErrors);
 			
-			Assert.Equal(1, exception.CompilationDiagnostics.Count);
-			Assert.Equal(1, exception.CompilationErrors.Count);
+			Assert.Single(exception.CompilationDiagnostics);
+			Assert.Single(exception.CompilationErrors);
 
 			var firstDiagnostic = exception.CompilationDiagnostics[0];
 			Assert.Equal("diagnosticMessage",firstDiagnostic.ErrorMessage);
@@ -45,8 +45,8 @@ namespace RazorLight.Tests.Compilation
 			Assert.NotEmpty(exception.CompilationDiagnostics);
 			Assert.NotEmpty(exception.CompilationErrors);
 			
-			Assert.Equal(1, exception.CompilationDiagnostics.Count);
-			Assert.Equal(1, exception.CompilationErrors.Count);
+			Assert.Single(exception.CompilationDiagnostics);
+			Assert.Single(exception.CompilationErrors);
 
 			var firstDiagnostic = exception.CompilationDiagnostics[0];
 			Assert.Equal("formattedMessage",firstDiagnostic.ErrorMessage);
