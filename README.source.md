@@ -229,12 +229,12 @@ Add these property groups to your **entry point csproj**.
 It has to be the entry point project. For example: ASP.NET Core web project, .NET Core Console project, etc.
 
 ```xml
-  <PropertyGroup>
-    <!-- This group contains project properties for RazorLight on .NET Core -->
-    <PreserveCompilationContext>true</PreserveCompilationContext>
-    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
-    <MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>
-  </PropertyGroup>
+<PropertyGroup>
+  <!-- This group contains project properties for RazorLight on .NET Core -->
+  <PreserveCompilationContext>true</PreserveCompilationContext>
+  <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+  <MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>
+</PropertyGroup>
 ```
 
 ### I'm getting "Can't load metadata reference from the entry assembly" exception
@@ -243,8 +243,8 @@ Set PreserveCompilationContext to true in your \*.csproj file's PropertyGroup ta
 
 ```xml
 <PropertyGroup>
-    ...
-    <PreserveCompilationContext>true</PreserveCompilationContext>
+  ...
+  <PreserveCompilationContext>true</PreserveCompilationContext>
 </PropertyGroup>
 ```
 
@@ -257,8 +257,8 @@ Set `PreserveCompilationReferences` and `PreserveCompilationContext` to true in 
 
 ```xml
 <PropertyGroup>
-    <PreserveCompilationReferences>true</PreserveCompilationReferences>
-    <PreserveCompilationContext>true</PreserveCompilationContext>
+  <PreserveCompilationReferences>true</PreserveCompilationReferences>
+  <PreserveCompilationContext>true</PreserveCompilationContext>
 </PropertyGroup>
 ```
 
