@@ -100,8 +100,9 @@ Include feature is useful when you have reusable parts of your templates you wan
 
 ```cshtml
 @model MyProject.TestViewModel
+
 <div>
-    Hello @Model.Title
+  Hello @Model.Title
 </div>
 
 @{ await IncludeAsync("SomeView.cshtml", Model); }
@@ -148,7 +149,7 @@ Visual Studio tooling knows nothing about RazorLight and assumes, that the view 
 @inherits TemplatePage<MyModel>
 
 <html>
-    Your awesome template goes here, @Model.Name
+  Your awesome template goes here, @Model.Name
 </html>
 ```
 
