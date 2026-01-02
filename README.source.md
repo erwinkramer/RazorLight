@@ -167,7 +167,7 @@ The short answer is, you have to set a project to use the memory caching provide
 :x:
 You used to be able to write:
 
-```c#
+```CSharp
 var razorEngine = new RazorLightEngineBuilder()
 .UseMemoryCachingProvider()
 .Build();
@@ -177,7 +177,7 @@ var razorEngine = new RazorLightEngineBuilder()
 
 :heavy_check_mark:
 
-```c#
+```CSharp
 var razorEngine = new RazorLightEngineBuilder()
                 .UseEmbeddedResourcesProject(typeof(AnyTypeInYourSolution)) // exception without this (or another project type)
                 .UseMemoryCachingProvider()
