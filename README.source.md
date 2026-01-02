@@ -80,9 +80,9 @@ If you store your templates in database - it is recommended to create custom Raz
 ```CSharp
 var project = new EntityFrameworkRazorProject(new AppDbContext());
 var engine = new RazorLightEngineBuilder()
-              .UseProject(project)
-              .UseMemoryCachingProvider()
-              .Build();
+  .UseProject(project)
+  .UseMemoryCachingProvider()
+  .Build();
 
 // For key as a GUID
 string result = await engine.CompileRenderAsync("6cc277d5-253e-48e0-8a9a-8fe3cae17e5b", new { Name = "John Doe" });
@@ -169,8 +169,8 @@ You used to be able to write:
 
 ```CSharp
 var razorEngine = new RazorLightEngineBuilder()
-.UseMemoryCachingProvider()
-.Build();
+  .UseMemoryCachingProvider()
+  .Build();
 ```
 
 ... but this now throws an exception, saying, "`_razorLightProject cannot be null`".
@@ -179,9 +179,9 @@ var razorEngine = new RazorLightEngineBuilder()
 
 ```CSharp
 var razorEngine = new RazorLightEngineBuilder()
-                .UseEmbeddedResourcesProject(typeof(AnyTypeInYourSolution)) // exception without this (or another project type)
-                .UseMemoryCachingProvider()
-                .Build();
+  .UseEmbeddedResourcesProject(typeof(AnyTypeInYourSolution)) // exception without this (or another project type)
+  .UseMemoryCachingProvider()
+  .Build();
 ```
 
 Affects: RazorLight-2.0.0-beta1 and later.
@@ -208,9 +208,9 @@ When RazorLight compiles your template - it loads all the assemblies from your e
 var metadataReference = MetadataReference.CreateFromFile("path-to-your-assembly");
 
 var engine = new RazorLightEngineBuilder()
-              .UseMemoryCachingProvider()
-              .AddMetadataReferences(metadataReference)
-              .Build();
+  .UseMemoryCachingProvider()
+  .AddMetadataReferences(metadataReference)
+  .Build();
 ```
 
 ### I'm getting errors after upgrading to ASP.NET Core 3.0 when using runtime compilation
