@@ -34,7 +34,7 @@ The original repo has not been updated in two years and I needed some updates to
 
 Install the nuget package using following command:
 
-```pws
+```powershell
 Install-Package RazorLight -Version 3.0.0
 ```
 
@@ -102,7 +102,7 @@ For embedded resource, the key is the namespace of the project where the templat
 
 The following examples are using this project structure:
 
-```
+```text
 Project/
   Model.cs
   Program.cs
@@ -163,7 +163,7 @@ int templateKey = 322;
 string result = await engine.CompileRenderAsync(templateKey.ToString(), new { Name = "John Doe" });
 ```
 
-You can find a full sample [here](https://github.com/toddams/RazorLight/tree/master/samples/RazorLight.Samples)
+You can find more at the [RazorLight.Samples](samples/RazorLight.Samples).
 
 # Includes (aka Partial views)
 
@@ -286,11 +286,11 @@ var metadataReference = MetadataReference.CreateFromFile("path-to-your-assembly"
 
 ### I'm getting errors after upgrading to ASP.NET Core 3.0 when using runtime compilation
 
-Please see: https://docs.microsoft.com/en-us/aspnet/core/razor-pages/sdk?view=aspnetcore-3.1#use-the-razor-sdk
+Please see [the warning in the Microsoft documentation](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/sdk?view=aspnetcore-3.1#properties-1):
 
 > Starting with ASP.NET Core 3.0, MVC Views or Razor Pages aren't served by default if the `RazorCompileOnBuild` or `RazorCompileOnPublish` MSBuild properties in the project file are disabled. Applications must add an explicit reference to the `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation` package if the app relies on runtime compilation to process .cshtml files.
 
-### I'm getting a Null Reference Exception after upgrading to RazorLight-2.0.0-beta2 or later.
+### I'm getting a Null Reference Exception after upgrading to RazorLight-2.0.0-beta2 or later
 
 The most common scenario is that some people were using RazorLight's ability to render raw strings as templates. While this is still somewhat supported (you can't use advanced features like partial views), what is not supported (right now) is using the caching provider with raw strings. A workaround is to use a dummy class.
 
