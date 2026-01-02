@@ -9,9 +9,9 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 # RazorLight
 
-Use Razor to build templates from Files / EmbeddedResources / Strings / Database or your custom source outside of ASP.NET MVC. No redundant dependencies and workarounds in pair with excellent performance and **.NET 8.0, NET 9.0 and .NET 10.0** support.
+Use Razor to build templates from Files / EmbeddedResources / Strings / Database or your custom source outside of ASP.NET MVC. No redundant dependencies and workarounds in pair with excellent performance and **.NET 8.0, 9.0 and 10.0** support.
 
-Forked from original by [@toddams](https://github.com/toddams/RazorLight/)
+Forked from original by [@toddams](https://github.com/toddams/RazorLight/).
 
 My packages are the same names, but prefixed with `jcamp.` to differentiate them.
 
