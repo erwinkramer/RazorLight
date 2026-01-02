@@ -217,7 +217,7 @@ var engine = new RazorLightEngineBuilder()
 
 Please see [the warning in the Microsoft documentation](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/sdk?view=aspnetcore-3.1#properties-1):
 
-> Starting with ASP.NET Core 3.0, MVC Views or Razor Pages aren't served by default if the `RazorCompileOnBuild` or `RazorCompileOnPublish` MSBuild properties in the project file are disabled. Applications must add an explicit reference to the `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation` package if the app relies on runtime compilation to process .cshtml files.
+> Starting with ASP.NET Core 3.0, MVC Views or Razor Pages aren't served by default if the `RazorCompileOnBuild` or `RazorCompileOnPublish` MSBuild properties in the project file are disabled. Applications must add an explicit reference to the [Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation) package if the app relies on runtime compilation to process `.cshtml` files.
 
 ### I'm getting a Null Reference Exception after upgrading to RazorLight-2.0.0-beta2 or later
 
