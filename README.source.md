@@ -228,7 +228,7 @@ The most common scenario is that some people were using RazorLight's ability to 
 Add these property groups to your **entry point csproj**.
 It has to be the entry point project. For example: ASP.NET Core web project, .NET Core Console project, etc.
 
-```XML
+```xml
   <PropertyGroup>
     <!-- This group contains project properties for RazorLight on .NET Core -->
     <PreserveCompilationContext>true</PreserveCompilationContext>
@@ -241,7 +241,7 @@ It has to be the entry point project. For example: ASP.NET Core web project, .NE
 
 Set PreserveCompilationContext to true in your \*.csproj file's PropertyGroup tag.
 
-```XML
+```xml
 <PropertyGroup>
     ...
     <PreserveCompilationContext>true</PreserveCompilationContext>
@@ -255,7 +255,7 @@ Additionally, RazorLight allows you to specifically locate any `MetadataReferenc
 By default, the 3.0 SDK avoids copying references to the build output.
 Set `PreserveCompilationReferences` and `PreserveCompilationContext` to true in your \*.csproj file's PropertyGroup tag.
 
-```XML
+```xml
 <PropertyGroup>
     <PreserveCompilationReferences>true</PreserveCompilationReferences>
     <PreserveCompilationContext>true</PreserveCompilationContext>
