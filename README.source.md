@@ -25,7 +25,7 @@ The original repo has not been updated in two years and I needed some updates to
 
 # Quickstart
 
-Install the nuget package using following command:
+Install the NuGet package using following command:
 
 ```powershell
 Install-Package RazorLight -Version 3.0.0
