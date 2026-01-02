@@ -102,7 +102,7 @@ First Found Date: 7/10/2020 7:00:28 PM
 			Precompile(key, key2, s);
 
 			var exc = Assert.Throws<RazorLightException>(() => Run(key, expected, "Samples"));
-			Assert.AreEqual("No precompiled template found for the key /folder/MessageItem.cshtml", exc.Message);
+			Assert.That(exc.Message, Is.EqualTo("No precompiled template found for the key /folder/MessageItem.cshtml"));
 		}
 
 		[TestCaseSource(nameof(s_testCases))]
@@ -111,7 +111,7 @@ First Found Date: 7/10/2020 7:00:28 PM
 			Precompile(key, key2, s);
 
 			var exc = Assert.Throws<RazorLightException>(() => Run(key, expected, "Samples/*.dll"));
-			Assert.AreEqual("No precompiled template found for the key /folder/MessageItem.cshtml", exc.Message);
+			Assert.That(exc.Message, Is.EqualTo("No precompiled template found for the key /folder/MessageItem.cshtml"));
 		}
 
 		private static (string, string) Precompile(string key, string key2, IFileSystemCachingStrategy s) => (
@@ -134,7 +134,7 @@ First Found Date: 7/10/2020 7:00:28 PM
 			commandLineArgs.AddRange(args);
 
 			var actual = Helper.RunCommand(commandLineArgs.ToArray()).ToString();
-			Assert.AreEqual(expected, actual);
+			Assert.That(actual, Is.EqualTo(expected));
 		}
 
 		[TestCaseSource(nameof(s_testCases))]
@@ -154,7 +154,7 @@ First Found Date: 7/10/2020 7:00:28 PM
 			};
 
 			var actual = Helper.RunCommand(commandLineArgs.ToArray()).ToString();
-			Assert.AreEqual(expected, actual);
+			Assert.That(actual, Is.EqualTo(expected));
 		}
 	}
 }

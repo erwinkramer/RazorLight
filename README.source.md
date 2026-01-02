@@ -2,11 +2,11 @@
 
 # RazorLight
 
-Use Razor to build templates from Files / EmbeddedResources / Strings / Database or your custom source outside of ASP.NET MVC. No redundant dependencies and workarounds in pair with excellent performance and **.NET 8.0 and .NET 9.0** support.
+Use Razor to build templates from Files / EmbeddedResources / Strings / Database or your custom source outside of ASP.NET MVC. No redundant dependencies and workarounds in pair with excellent performance and **.NET 8.0, NET 9.0 and .NET 10.0** support.
 
 Forked from original by [@toddams](https://github.com/toddams/RazorLight/)
 
-My packages are the same names, but prefixed with jcamp. to differentiate them.
+My packages are the same names, but prefixed with `jcamp.` to differentiate them.
 
 The original repo has not been updated in two years and I needed some updates to the package that were provided by various PRs. I've tried to give all credit where due.
 
@@ -27,13 +27,13 @@ The original repo has not been updated in two years and I needed some updates to
 
 Install the nuget package using following command:
 
-```
+```pws
 Install-Package RazorLight -Version 3.0.0
 ```
 
 The simplest scenario is to create a template from string. Each template must have a `templateKey` that is associated with it, so you can render the same template next time without recompilation.
 
-snippet: simple
+snippet: Simple
 
 To render a compiled template:
 

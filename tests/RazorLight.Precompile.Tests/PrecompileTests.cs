@@ -11,12 +11,12 @@ namespace RazorLight.Precompile.Tests
 			scenario.Cleanup();
 
 			var expectedPrecompiledFilePath = GetExpectedPrecompiledFilePath(templateFilePath, scenario);
-			FileAssert.DoesNotExist(expectedPrecompiledFilePath);
+			Assert.That(expectedPrecompiledFilePath, Does.Not.Exist);
 
 			Precompile(templateFilePath, scenario, expectedPrecompiledFilePath);
 
 			scenario.Cleanup();
-			FileAssert.DoesNotExist(expectedPrecompiledFilePath);
+			Assert.That(expectedPrecompiledFilePath, Does.Not.Exist);
 		}
 
 		[TestCaseSource(typeof(PrecompileTestCases), nameof(PrecompileTestCases.TestCases))]
@@ -25,13 +25,13 @@ namespace RazorLight.Precompile.Tests
 			scenario.Cleanup();
 
 			var expectedPrecompiledFilePath = GetExpectedPrecompiledFilePath(templateFilePath, scenario);
-			FileAssert.DoesNotExist(expectedPrecompiledFilePath);
+			Assert.That(expectedPrecompiledFilePath, Does.Not.Exist);
 
 			var sw1 = Stopwatch.StartNew();
 			Precompile(templateFilePath, scenario, expectedPrecompiledFilePath);
 			sw1.Stop();
 
-			FileAssert.Exists(expectedPrecompiledFilePath);
+			Assert.That(expectedPrecompiledFilePath, Does.Exist);
 
 			var sw2 = Stopwatch.StartNew();
 			Precompile(templateFilePath, scenario, expectedPrecompiledFilePath);
@@ -40,7 +40,7 @@ namespace RazorLight.Precompile.Tests
 			TestContext.WriteLine($"TS1 = {sw1.Elapsed}, TS2 = {sw2.Elapsed}");
 
 			scenario.Cleanup();
-			FileAssert.DoesNotExist(expectedPrecompiledFilePath);
+			Assert.That(expectedPrecompiledFilePath, Does.Not.Exist);
 		}
 
 		public static string GetExpectedPrecompiledFilePath(string templateFilePath, TestScenario scenario)
@@ -60,8 +60,8 @@ namespace RazorLight.Precompile.Tests
 			commandLineArgs.AddRange(scenario.ExtraCommandLineArgs);
 
 			var precompiledFilePath = Helper.RunCommandTrimNewline(commandLineArgs.ToArray());
-			Assert.AreEqual(expectedPrecompiledFilePath, precompiledFilePath);
-			FileAssert.Exists(precompiledFilePath);
+			Assert.That(precompiledFilePath, Is.EqualTo(expectedPrecompiledFilePath));
+			Assert.That(precompiledFilePath, Does.Exist);
 		}
 	}
 }

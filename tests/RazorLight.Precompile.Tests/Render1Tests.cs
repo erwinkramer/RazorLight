@@ -90,7 +90,7 @@ Approved per rationale provided and John Smith&#x27; review and approval on 3/30
 			}
 
 			var actual = Helper.RunCommand(commandLineArgs.ToArray()).ToString();
-			Assert.AreEqual(expected, actual);
+			Assert.That(actual, Is.EqualTo(expected));
 		}
 
 		[TestCaseSource(nameof(s_testCases))]
@@ -112,7 +112,7 @@ Approved per rationale provided and John Smith&#x27; review and approval on 3/30
 			}
 
 			var actual = Helper.RunCommand(commandLineArgs.ToArray()).ToString();
-			Assert.AreEqual(expected, actual);
+			Assert.That(actual, Is.EqualTo(expected));
 		}
 	}
 }

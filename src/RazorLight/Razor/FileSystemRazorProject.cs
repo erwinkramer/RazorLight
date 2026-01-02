@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace RazorLight.Razor
@@ -43,6 +42,11 @@ namespace RazorLight.Razor
 		/// <returns></returns>
 		public override Task<RazorLightProjectItem> GetItemAsync(string templateKey)
 		{
+			if (string.IsNullOrEmpty(templateKey))
+			{
+				throw new ArgumentNullException(nameof(templateKey));
+			}
+
 			if (!templateKey.EndsWith(Extension))
 			{
 				templateKey = templateKey + Extension;

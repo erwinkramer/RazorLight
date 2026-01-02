@@ -1,0 +1,34 @@
+<Solution>
+  <Folder Name="/Build/">
+    <File Path=".github/workflows/dotnet-test.yml" />
+    <File Path=".github/workflows/publish-nuget.yml" />
+    <File Path=".github/workflows/release-please.yml" />
+    <File Path="Directory.Build.props" />
+  </Folder>
+  <Folder Name="/External/">
+    <File Path=".editorconfig" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+    <File Path="README.source.md" />
+  </Folder>
+  <Folder Name="/Publish/">
+    <File Path="makeNuget.cmd" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/RazorLight.Samples/Samples.EntityFrameworkProject.csproj" />
+  </Folder>
+  <Folder Name="/sandbox/">
+    <Project Path="sandbox/RazorLight.Sandbox/RazorLight.Sandbox.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/RazorLight.Precompile/RazorLight.Precompile.csproj" />
+    <Project Path="src/RazorLight/RazorLight.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/RazorLight.Precompile.Tests/RazorLight.Precompile.Tests.csproj" />
+    <Project Path="tests/RazorLight.Tests/RazorLight.Tests.csproj" />
+  </Folder>
+</Solution>

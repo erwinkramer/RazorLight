@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Threading.Tasks;
 using RazorLight.Tests.Utils;
 using VerifyXunit;
@@ -14,7 +13,6 @@ namespace RazorLight.Tests.Integration
 		public int NumberOfItems { get; set; }
 	}
 
-	[UsesVerify]
 	public class RendererCommonCasesTests
 	{
 
